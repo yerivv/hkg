@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('@@webRoot/_include/head.html',{
+		"title": "가이드"
+	})
+	@@include('@@webRoot/_include/library.html')
+	<script src="@@webRoot/js/ui.js"></script>
+	<script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+	<div id="app">
+		@@include('@@webRoot/_include/header.html')
+
+		@@include('@@webRoot/_include/aside.html')
+
+		<main id="container" style="padding:20px;">
+			<!-- 검색11 -->
+			<div class="search-filter">
+				<div class="period-box">
+					<input type="radio" name="period" id="period-1" onclick="period.select(this, 'day', 7)" /><label for="period-1">7일</label>
+					<input type="radio" name="period" id="period-2" onclick="period.select(this, 'month', 1)" /><label for="period-2">1개월</label>
+					<input type="radio" name="period" id="period-3" onclick="period.select(this,'month', 3)" checked="checked" /><label for="period-3">3개월</label>
+					<input type="radio" name="period" id="period-4" onclick="period.select(this,'month', 6)" /><label for="period-4">6개월</label>
+					<input type="radio" name="period" id="period-5" onclick="period.select(this,'month', 12)" /><label for="period-5">12개월</label>
+				</div>
+				<div class="date-box">
+					<input type="text" name="startDate" id="startDate" value="" placeholder="YYYY. MM. DD" readonly="readonly" />
+					<input type="text" name="endDate" id="endDate" value="" placeholder="YYYY. MM. DD" readonly="readonly" />
+				</div>
+			</div>
+		</main>
+
+		@@include('@@webRoot/_include/footer.html')
+
+		@@include('@@webRoot/_include/foot.html')
+
+		@@include('@@webRoot/_include/modal.html')
+	</div>
+
+	<script>
+		period.init('month', 3);
+	</script>
+</body>
+</html>

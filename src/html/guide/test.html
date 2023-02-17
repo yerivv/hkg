@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('@@webRoot/_include/head.html',{
+		"title": "테스트"
+	})
+	@@include('@@webRoot/_include/library.html')
+	<script src="@@webRoot/js/ui.js"></script>
+	<script src="@@webRoot/js/develop.js"></script>
+	<style type="text/css">
+		#app {max-width:1920px;}
+		#container {height:110vh;background-color:yellow;}
+		#fixed {position:fixed;right:50%;top:0;width:200px;height:100vh;margin-right:-960px;background-color:coral;}
+	</style>
+</head>
+<body>
+	<div id="app">
+		@@include('@@webRoot/_include/header.html')
+
+		@@include('@@webRoot/_include/aside.html')
+
+		<main id="container">
+			gkgkgkgk
+		</main>
+
+		<div id="fixed">1111</div>
+		@@include('@@webRoot/_include/footer.html')
+
+		@@include('@@webRoot/_include/foot.html')
+
+		@@include('@@webRoot/_include/modal.html')
+	</div>
+
+	<script>
+	</script>
+</body>
+</html>
