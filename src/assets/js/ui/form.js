@@ -23,6 +23,9 @@ const period = {
 			case 'year':
 				newDate = new Date().setYear(year - c);
 				break;
+			case 'input':
+				newDate = new Date().setYear(year - c);
+				break;
 		}
 		//a.checked = true;
 		document.querySelector('#startDate').value = new Date(newDate).toLocaleDateString();

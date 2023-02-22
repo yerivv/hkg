@@ -22,9 +22,10 @@
 					<input type="radio" name="period" id="period-2" onclick="period.select(this, 'month', 1)" /><label for="period-2">1개월</label>
 					<input type="radio" name="period" id="period-3" onclick="period.select(this,'month', 3)" checked="checked" /><label for="period-3">3개월</label>
 					<input type="radio" name="period" id="period-4" onclick="period.select(this,'month', 6)" /><label for="period-4">6개월</label>
-					<input type="radio" name="period" id="period-5" onclick="period.select(this,'month', 12)" /><label for="period-5">12개월</label>
+					<input type="radio" name="period" id="period-5" onclick="period.select(this,'year', 1)" /><label for="period-5">1년</label>
+					<input type="radio" name="period" id="period-input" onclick="period.select(this,'input')" /><label for="period-input">직접입력</label>
 				</div>
-				<div class="date-box">
+				<div class="date-box blind">
 					<input type="text" name="startDate" id="startDate" value="" placeholder="YYYY. MM. DD" readonly="readonly" />
 					<input type="text" name="endDate" id="endDate" value="" placeholder="YYYY. MM. DD" readonly="readonly" />
 				</div>
