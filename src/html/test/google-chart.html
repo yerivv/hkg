@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>구글차트</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/watermarkjs@2.1.1/dist/watermark.min.js"></script>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      let data = google.visualization.arrayToDataTable([
+        ['Element', 'Density', { role: 'style' }],
+        ['Copper', 8.94, '#b87333', ],
+        ['Silver', 10.49, 'silver'],
+        ['Gold', 19.30, 'gold'],
+        ['Platinum', 21.45, 'color: #e5e4e2' ]
+      ]);
+
+      let options = {
+        title: "Density of Precious Metals, in g/cm^3",
+        bar: {groupWidth: '95%'},
+        legend: 'none',
+      };
+
+      const chart_div = document.querySelector('#chart_div');
+      const chartIn = chart_div.querySelector('.content');
+      const chartImgBox = chart_div.querySelector('#imgURL');
+      const chart = new google.visualization.ColumnChart(chartIn);
+
+      // Wait for the chart to finish drawing before calling the getImageURI() method.
+      google.visualization.events.addListener(chart, 'ready', function () {
+        let chartImg = chart.getImageURI();
+        chartImgBox.value = chartImg;
+        //console.log(chart_div.innerHTML);
+      });
+      chart.draw(data, options);
+    }
+    
+
+    function imgLoad(){
+      let options = {
+        init: function (img) {
+          img.crossOrigin = 'anonymous';
+        }
+      };
+      let url = document.querySelector('#imgURL').value;
+      let logo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png';
+      watermark([url, logo], options)
+      .image(watermark.image.center(0.5))
+      .then(img => document.querySelector('#chart_div .images').appendChild(img));
+    }
+
+    function imgLoad2(){
+      let url = document.querySelector('#imgURL').value;
+      watermark([url])
+      .image(watermark.text.center('watermark.js', '48px Josefin Slab', '#000', 0.5))
+      .then(function (img) {
+        document.querySelector('#chart_div .images').appendChild(img)
+      });
+    }
+  </script>
+  <style type="text/css">
+    #chart_div {width:800px;margin:150px auto;}
+    #chart_div .download {text-align:right;}
+    #chart_div .content {width:100%;height:500px;}
+    /* #chart_div{
+      background: url(logo_png.png) repeat;
+    } */
+  </style>
+</head>
+
+<body>
+<div id="chart_div">
+  <div class="download"><span onclick="imgLoad()" style="text-decoration:underline;cursor:pointer">내보내기</span></div>
+  <div class="download"><span onclick="imgLoad2()" style="text-decoration:underline;cursor:pointer">텍스트 내보내기</span></div>
+  <input type="hidden" id="imgURL" />
+  <div class="content"></div>
+  <div class="images"></div>
+</div>
+</body>
+</html>
