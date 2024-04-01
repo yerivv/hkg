@@ -4,7 +4,7 @@ body{@include mo-min-width;@include text;}
 
 #app{overflow:hidden;position:relative;}
 
-#container {}
+#container {max-width: 800px; margin: 0 auto;}
 
 .m-icon-24 {
   width: 24px;
