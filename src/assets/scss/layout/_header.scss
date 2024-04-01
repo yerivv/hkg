@@ -1,1 +1,125 @@
-#header{background:red;}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 16px 20px;
+
+  img {
+    max-height: 24px;
+  }
+
+  h1 {
+    height: 24px;
+  }
+}
+
+#toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 118px;
+  border-radius: 16px 16px 0px 0px;
+  //opacity: 0.95;
+  background: linear-gradient(100deg, #3551A4 25.67%, #0A0E1D 80.54%);
+  backdrop-filter: blur(2px);
+  // &.my {
+  //   display: none;
+  // }
+  &.tour {
+    background: linear-gradient(100deg, #3551A4 25.67%, #A2DFE3 80.54%);
+  }
+  .membership-certify {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    height: 58px;
+    padding: 0 30px;
+    color: $primary-white;
+    font-weight: 600;
+    line-height: 24px;
+    &::after {
+      content: '더보기';
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      background-image: url('../../images/m-16-arrow.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-indent: -999em;
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 40px;
+    border-radius: 16px 16px 0px 0px;
+    background-color: $primary-white;
+    li:not(.my) {
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px 0;
+        width: 60px;
+        font-size: 11px;
+        line-height: 18px;
+        .icon {
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      &.membership .icon {
+        background-image: url('../../images/toolbar-membership.png');
+      }
+      &.tour .icon {
+        background-image: url('../../images/toolbar-tour.png');
+      }
+    }
+    .my {
+      .box {
+        display: flex;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transform: rotate(-45deg);
+          flex-shrink: 0;
+          border-radius: 10px;
+          background: linear-gradient(187deg, #3551A4 28.34%, #A1E2B8 110.1%);
+          box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        }
+        .text {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          margin-top: 3px;
+          @include text-en-bold;
+          color: $primary-white;
+          text-align: center;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,108 @@
-.main{width:100%;height:800px;margin:0 auto;background:url(../images/1.png) 0 0 repeat;}
+.main-a1 {
+  margin-bottom: 80px;
+  .main-visual {
+    position: relative;
+    .item {
+      position: relative;
+      .banner {
+        position: relative;
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+        overflow: hidden;
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 0;
+          height: 800px;
+          max-width: none;
+          animation-name: slidein;
+          animation-duration: 3s;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(0deg, #000 0%, rgba(3, 15, 48, 0.00) 50%);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          opacity: 0.6;
+          background: linear-gradient(180deg, #89BDFF 0%, rgba(189, 206, 255, 0.00) 26.63%);
+        }
+      }
+      .text-box {
+        position: absolute;
+        bottom: 180px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        text-align: center;
+        color: $primary-white;
+        .title {
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 44px;
+          &.en {
+            font-family:'Anek Gujarati';
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 48px;
+          }
+        }
+        .summary {
+          margin-top: 20px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .indicator-liner {
+    display: flex;
+    position: absolute;
+    bottom: 146px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    > span {
+      width: 40px;
+      height: 2px;
+      background-color: rgba(256, 256, 256, 0.25);
+      &.active {
+        background-color: rgba(256, 256, 256, 0.75);
+      }
+    }
+  }
+}
+
+.main-my {
+  background-color: $bg-lightsky;
+
+  .space {
+    padding: 20px 20px 0;
+    &.space1 {
+      padding: 40px 58px 20px;
+    }
+    &.space2 {
+      padding-top: 50px;
+    }
+    &.space3 {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  .swipe {
+    padding: 40px 0 80px;
+    background-color: #F8F8F8;
+  }
+}

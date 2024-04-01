@@ -1,5 +1,7 @@
-@mixin text{word-wrap:break-word;font-size:14px;color:$basic-color1;line-height:1.5;font-weight:400;font-family:'Noto Sans KR';}
+@mixin text{word-wrap:break-word;font-size:14px;color:$primary-black;line-height:1.5;font-weight:400;font-family:'Pretendard';}
 
-@mixin text-head1{font-size:20px;color:$basic-color1;line-height:1.5;font-weight:700;}
+@mixin text-head1{font-size:20px;color:$primary-black;line-height:1.5;font-weight:600;}
 
-@mixin text-body1{font-size:14px;color:$basic-color1;line-height:1.5;font-weight:400;}
+@mixin text-body1{font-size:14px;color:$primary-black;line-height:1.5;font-weight:400;}
+
+@mixin text-en-bold {word-wrap:break-word;font-size:14px;color:$primary-black;line-height:1.5;font-weight:700;font-family:'Anek Gujarati';}

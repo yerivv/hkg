@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-1 메인 - MY"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/A1/header.html',{
+          "header" : "main"
+        })
+        @@include('@@webRoot/_include/A1/toolbar.html',{
+          "toolbar" : "my"
+        })
+        <!-- @@include('@@webRoot/_include/aside.html') -->
+
+        <main id="container" class="main-my">
+          <div><img src="@@webRoot/images/a1/main-my-01.png" alt="멤버십" /></div>
+          <div class="space space1"><img src="@@webRoot/images/a1/main-my-02.png" alt="예약하기" /></div>
+          <div class="space"><img src="@@webRoot/images/a1/main-my-03.png" alt="진행중인 예약" /></div>
+          <div class="space"><img src="@@webRoot/images/a1/main-my-04.png" alt="예약현황" /></div>
+          <div class="space"><img src="@@webRoot/images/a1/main-my-05.png" alt="설문" /></div>
+          <div class="space space2"><img src="@@webRoot/images/a1/main-my-06.png" alt="플래너" /></div>
+          <div class="space space3"><img src="@@webRoot/images/a1/main-my-07.png" alt="추천투어" /></div>
+          <div class="swipe">
+            
+          </div>
+        </main>
+
+        @@include('@@webRoot/_include/A1/footer.html',{
+          "footer" : "my"
+        })
+
+        <!-- @@include('@@webRoot/_include/foot.html') -->
+
+        <!-- @@include('@@webRoot/_include/modal.html') -->
+    </div>
+    
+    <script>
+    </script>
+</body>
+</html>

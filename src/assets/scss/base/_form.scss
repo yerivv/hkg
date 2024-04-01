@@ -3,7 +3,7 @@ input[type=checkbox]:checked{border:1px solid black;}
 
 input[type=radio]{border:1px solid red;}
 input[type=radio]:checked{border:1px solid black;}
-:checked + label {color:$point-color1;}
+:checked + label {color:$primary-black;}
 
 input[type=text],
 input[type=password],
