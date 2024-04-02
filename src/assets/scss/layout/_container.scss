@@ -6,7 +6,10 @@ body{@include mo-min-width;@include text;}
 
 #container {max-width: 800px; margin-left: auto; margin-right: auto;}
 
-#container-pc {}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
 
 .m-icon-24 {
   width: 24px;
@@ -14,17 +17,18 @@ body{@include mo-min-width;@include text;}
 
 .bg-a2 {
   background-color: #101010;
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .bg-a2-splash {
   background-color: #030F30;
 }
 
+.body-gate {
+  background-color: #030F30;
+}
 .body-gate #app {
   margin: 0 auto;
   padding: 80px 0;
-  background-color: #030F30;
   color: $primary-white;
   .header {
     width: 1720px;
@@ -54,6 +58,9 @@ body{@include mo-min-width;@include text;}
     margin: 188px auto;
     @media (min-width: 1024px) {
       flex-direction: row;
+    }
+    @media (min-width: 1921px) {
+      padding: 0 2.5%;
     }
     dl {
       display: flex;

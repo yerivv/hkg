@@ -629,7 +629,7 @@
   margin-left: auto;
   margin-right: auto;
   min-height: 100vh;
-
+  padding-top: 80px;
   .main-menu {
     display: flex;
     justify-content: center;
@@ -656,22 +656,23 @@
       }
     }
   }
-  .detail {
-    width: 1920px;
-    margin: 0 auto;
-  }
 
   .inner-box {
-    display: flex;
-    justify-content: space-between;
+    &::after {
+      content:'';
+      display:block;
+      clear: both;
+    }
     position: relative;
     width: 1456px;
+    //height: 2272px;
     margin: 0 auto;
     .main {
+      float:left;
       position: sticky;
       left: 0;
-      top: 0;
-      bottom: auto;
+      top: 140px;
+      bottom: 0;
       z-index: 1;
       margin: 60px 0;
       padding-right: 60px;
@@ -681,7 +682,8 @@
       }
     }
     .membership {
-      margin: 60px 0 0;
+      float:right;
+      margin: 60px 0;
       width: 320px;
       height: 100%;
     }
@@ -759,18 +761,54 @@
 }
 
 .main-pc-a2 {
-  img {width: 100%;}
+  margin: 0 auto;
+  img {
+    width: 100%;
+    max-width: 1920px;
+  }
   .inner {
-    min-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
-  .inner1 {
-    width: 1920px;
+}
+
+.main-pc-a1-golf {
+  max-width: 1920px;
+  min-width: 1400px;
+  margin: 0 auto;
+  img {width: 100%;}
+  margin-bottom: 120px;
+  .inner-wide {
     margin: 0 auto;
-    padding: 100px;
-    &.pd0 {
-      padding: 0;
+
+  }
+  .inner {
+    width: 1400px;
+    margin: 0 auto;
+    &.banner {
+      position: relative;
+      height: 800px;
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: -260px;
+        width: 1920px;
+        height: 100%;
+      }
+    }
+    &.banner2 {
+      position: relative;
+      height: 732px;
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: -260px;
+        width: 1920px;
+        height: 100%;
+      }
     }
   }
 }

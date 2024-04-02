@@ -316,7 +316,13 @@
 }
 
 #header-pc {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  width: 100%;
   padding: 28px 100px;
+  background-color: $primary-white;
   border-bottom: 1px solid #EAF0F5;
   .box {
     position: relative;
@@ -353,10 +359,7 @@
   }
 
   &.a2 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+    background-color: transparent;
     border-bottom-width: 0;
     .gnb ul a {
       color: $primary-white;

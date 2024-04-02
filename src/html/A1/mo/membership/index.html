@@ -9,7 +9,7 @@
     <script src="@@webRoot/js/develop.js"></script>
 </head>
 <body>
-    <div id="app" style="opacity: 0">
+    <div id="app">
         @@include('@@webRoot/_include/A1/header.html',{
           "header" : "main"
         })
@@ -81,8 +81,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const element = document.getElementById("app");
-        element.style.transition = "opacity 2s ease";
-        element.style.opacity = 1;
+        element.classList.add("fade-in");
       });
 
       let swiperMembershipMain; // swiperMembershipMain을 전역 스코프에 미리 선언합니다.
