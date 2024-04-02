@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-1 메인"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app" style="opacity: 0">
+        @@include('@@webRoot/_include/A1/header.html',{
+          "header" : "main"
+        })
+        @@include('@@webRoot/_include/A1/toolbar.html',{
+          "toolbar" : "membership"
+        })
+        <main id="container" class="main-a1">
+          <div class="main-visual swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="../golf/detail.html" class="item">
+                  <div class="banner"><img src="@@webRoot/images/a1/main-banner.png" alt="" /></div>
+                  <div class="text-box">
+                    <div class="title en">New Golf Club <br />Launching D-22</div>
+                    <div class="summary">
+                      다양한 벙커가 조성되어 난이도 변화와<br />다이나믹한 라운딩을 즐길 수 있는 코스
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="../golf/detail.html" class="item">
+                  <div class="banner"><img src="@@webRoot/images/a1/main-banner2.png" alt="" /></div>
+                  <div class="text-box">
+                    <div class="title">하노이 탕란 C.C 론칭<br />D-11</div>
+                    <div class="summary">
+                      리베티드 벙커가 많이 설치되어<br />
+                      난이도 조절을 해가며 재미가 더해지는 코스
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="../golf/detail.html" class="item">
+                  <div class="banner"><img src="@@webRoot/images/a1/main-banner3.png" alt="" /></div>
+                  <div class="text-box">
+                    <div class="title">후쿠오카 최고명문<br />D-7</div>
+                    <div class="summary">
+                      편안한 언듀레이션과 적당한 변화를 갖춘 그린으로<br />한번쯤은 라운드를 해보고 싶은 센츄리 골프클럽
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination style-visual"></div>
+          </div>
+          <div class="membership-wrap">
+            <div class="title-box">
+              <div class="title"><img src="@@webRoot/images/union.svg" alt="한케이 골프" />멤버십</div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-01-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-01-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-01-list3.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="swiper-pagination style-dot"></div>
+          </div>
+          <div><img src="@@webRoot/images/a1/main-02.png" alt="골프장 소식" /></div>
+          <div><img src="@@webRoot/images/a1/main-03.png" alt="멤버십" /></div>
+        </main>
+        
+        @@include('@@webRoot/_include/A1/footer.html',{
+          "footer" : "membership"
+        })
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const element = document.getElementById("app");
+        element.style.transition = "opacity 2s ease";
+        element.style.opacity = 1;
+      });
+
+      let swiperMembershipMain; // swiperMembershipMain을 전역 스코프에 미리 선언합니다.
+      document.addEventListener("DOMContentLoaded", function() {
+        // DOM이 로드되면 swiperMembershipMain 객체를 초기화합니다.
+        swiperMembershipMain = new Swiper('.main-visual', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          effect: "fade",
+          loop: true,
+          autoplay: {
+            delay: 7500,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: ".main-visual .swiper-pagination",
+            type: "progressbar",
+          },
+          on: {
+            slideChange : function() {
+              const swiper = this; // 현재 Swiper 객체를 가져옵니다.
+              const boxes = document.querySelectorAll('.main-visual .swiper-slide');
+              boxes.forEach(function(box) {
+                box.classList.remove('ani-slide');
+              });
+              if (swiper && swiper.realIndex !== undefined) {
+                const activeIndex = swiper.realIndex;
+                boxes[activeIndex].classList.add('ani-slide');
+              }
+            },
+          }
+        });
+      });
+
+      const swiperMembership = new Swiper('.membership-wrap .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: ".membership-wrap .swiper-pagination",
+        },
+      })
+    </script>
+</body>
+</html>

@@ -1,6 +1,23 @@
 #footer {
   padding-bottom: 118px;
-  // &.my {
-  //   padding-bottom: 0;
-  // }
+}
+
+#footer-pc {
+  width: 100%;
+  padding: 60px 100px;
+  border-top: 1px solid #eee;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.a2 {
+    border-top-width: 0;
+    > div {
+      .t1 {
+        filter: invert(1);
+      }
+    }
+  }
 }

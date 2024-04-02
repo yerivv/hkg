@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-2 메인"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body class="bg-a2">
+    <div id="app" style="overflow: initial !important;opacity: 0;">
+        @@include('@@webRoot/_include/A2/header.html',{
+          "header" : "main"
+        })
+        @@include('@@webRoot/_include/A2/toolbar.html',{
+          "toolbar" : "membership",
+          "active-1" : "active",
+          "active-2" : "",
+          "active-3" : "",
+        })
+        <main id="container" class="main-a2">
+          <div class="main-visual2">            
+            <div class="item item1">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner1.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEW CLUB</div>
+                <div class="title">수준 높은 코스로 즐기는<br />힐링 라운드</div>
+                <div class="summary">
+                  연태 남산 국제골프클럽 D-22
+                </div>
+              </div>
+            </div>
+            <div class="item item2">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner2.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">HANK MEMBERSHIP</div>
+                <div class="title">별이 쏟아질 것 같은 밤하늘<br />대자연속 코스</div>
+                <div class="summary">
+                  HK 치구사 골프&리조트
+                </div>
+              </div>
+            </div>
+            <div class="item item3">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner3.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">HANK MEMBERSHIP</div>
+                <div class="title">필리핀 오르모크 섬의 자연속<br />넓은 페어웨이</div>
+                <div class="summary">
+                  레이테 골프 컨트리 클럽
+                </div>
+              </div>
+            </div>
+            <div class="item item4">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner4.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">온전한 쉼과 여유를 선사할<br />새로워진 객실</div>
+                <div class="summary">
+                  HK 치구사
+                </div>
+              </div>
+            </div>
+            <div class="item item5">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner5.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">아름다운 햇살을 품은<br />4월의 코스</div>
+                <div class="summary">
+                  HK 치구사
+                </div>
+              </div>
+            </div>
+            <div class="item item6">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner6.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">온전한 휴식과 힐링이<br />만나는 곳, 빈펄 신규 풀빌라</div>
+                <div class="summary">
+                  빈펄 나트랑
+                </div>
+              </div>
+            </div>
+            <div class="item item7">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner7.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">최상의 스파로 다시 살아나는<br />여유로운 삶</div>
+                <div class="summary">
+                  빈펄 남호이안
+                </div>
+              </div>
+            </div>
+            <div class="item item8">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner8.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">당신을 더 빛나게, 빈펄<br />하버 쇼핑가 그랜드 오픈</div>
+                <div class="summary">
+                  빈펄 나트랑
+                </div>
+              </div>
+            </div>
+            <div class="item item9">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner9.png" alt="" /></div>
+              <div class="text-box">
+                <div class="label">NEWS OF THE MONTH</div>
+                <div class="title">자연을 품고 재미를 담다<br />이달의 로컬 맛집</div>
+                <div class="summary">
+                  치링골프
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        @@include('@@webRoot/_include/A2/footer.html')
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const element = document.getElementById("app");
+        element.style.transition = "opacity 5s ease";
+        element.style.opacity = 1;
+      });
+      
+      const scrollCont = () => {
+        let preScrollTop = 0;
+        window.addEventListener('scroll', () => {
+          let nextScrollTop = window.scrollY;
+          const contStyle = document.querySelector('.main-visual2');
+          
+          if (nextScrollTop > preScrollTop) {
+            contStyle.classList.remove('top');
+          } else {
+            contStyle.classList.add('top');
+          }
+          // 현재 스크롤 위치를 이전 스크롤 위치로 업데이트
+          preScrollTop = nextScrollTop;
+        });
+      }
+
+      scrollCont();
+    </script>
+</body>
+</html>

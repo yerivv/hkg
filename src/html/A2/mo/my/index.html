@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-2 메인 - MY"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body class="bg-a2">
+    <div id="app">
+        @@include('@@webRoot/_include/A2/header.html',{
+          "header" : "main"
+        })
+        @@include('@@webRoot/_include/A2/toolbar.html',{
+          "toolbar" : "my",
+          "active-1" : "",
+          "active-2" : "active",
+          "active-3" : "",
+        })
+        <main id="container" class="main-a2 main-my">
+          <div><img src="@@webRoot/images/a2/main-my-01.png" alt="멤버십" /></div>
+          <div class="space space1"><img src="@@webRoot/images/a2/main-my-02.png" alt="예약하기" /></div>
+          <!-- <div class="space"><img src="@@webRoot/images/a2/main-my-03.png" alt="진행중인 예약" /></div>
+          <div class="space"><img src="@@webRoot/images/a2/main-my-04.png" alt="예약현황" /></div>
+          <div class="space"><img src="@@webRoot/images/a2/main-my-05.png" alt="설문" /></div> -->
+          <div class="space space2"><img src="@@webRoot/images/a2/main-my-06.png" alt="플래너" /></div>
+          <div class="space space3"><img src="@@webRoot/images/a2/main-my-07.png" alt="추천투어" /></div>
+          <div class="recently-wrap">
+            <div class="title-box">
+              <div class="title">최근에 본 상품</div>
+              <a href="#" class="more">더보기</a>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a2/main-my-08-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a2/main-my-08-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a2/main-my-08-list3.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        @@include('@@webRoot/_include/A2/footer.html',{
+          "footer" : "my"
+        })
+    </div>
+    
+    <script>
+      const swiperTourTicket = new Swiper('.recently-wrap .swiper', {
+        slidesPerView: 2.25,
+        spaceBetween: 16,
+      })
+    </script>
+</body>
+</html>

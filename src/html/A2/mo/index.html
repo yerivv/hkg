@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-2 SPLASH"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body class="bg-a2-splash">
+    <div id="app">
+        <main id="container" class="main-a2-splash">
+          <div class="swiper">
+            <div class="title"><img src="@@webRoot/images/a2/splash-t.png" alt="" /></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-1.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>특별한 경험으로의 초대</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-2.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>삶을 가치있게 하는 여정</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-3.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>최고의 서비스로 최상의 경험을</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide"></div>
+            </div>
+            <div class="swiper-pagination style-dot splash2"></div>
+          </div>
+        </main>
+    </div>
+    
+    <script>
+      const swiperSplashA2 = new Swiper('.main-a2-splash .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        effect: "fade",
+        loop: false,
+        pagination: {
+          el: ".main-a2-splash .swiper-pagination",
+          renderBullet: function (index, className) {
+            if (index < 3) {
+              return '<span class="' + className + '"></span>';
+            } else {
+              return '';
+            }
+          },
+        },
+        on: {
+          slideChange : function() {
+            const swiper = this;
+            if (swiper && swiper.realIndex !== undefined) {
+              const activeIndex = swiper.realIndex;
+              if (activeIndex === (swiper.slides.length - 1)) {
+                //console.log("마지막 슬라이드에 도달했습니다.");
+                window.location.href = "membership/index.html";
+              }
+            }
+          },
+        }
+      })
+    </script>
+</body>
+</html>

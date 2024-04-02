@@ -3,3 +3,6 @@
 html{overflow-y:auto;}
 body{-webkit-text-size-adjust:none;}
 button{cursor:pointer;}
+html,body{
+	height: 100%;
+}

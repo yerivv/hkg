@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-1 메인"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app" style="overflow: initial !important">
+        @@include('@@webRoot/_include/A1/pc/header.html')
+        <main id="container-pc" class="main-pc-a1">
+          <div class="main-menu">
+            <ul>
+              <li class="active"><a href="#">회원권</a></li>
+              <li class="line"></li>
+              <li><a href="#">투어</a></li>
+            </ul>
+          </div>
+          <div class="inner-box">
+            <div class="main">
+              <div class="inner"><a href="../golf/detail.html"><img src="@@webRoot/images/a1/pc/content.jpg" alt="" /></a></div>
+              <div class="inner" style="margin-top: 60px"><img src="@@webRoot/images/a1/pc/content-cs.png" alt="" /></div>
+            </div>
+            <div class="membership">
+              <img src="@@webRoot/images/a1/pc/my.png" alt="" />
+            </div>
+          </div>
+        </main>
+        @@include('@@webRoot/_include/A1/pc/footer.html')
+    </div>
+</body>
+</html>

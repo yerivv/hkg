@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-2 메인 - 투어"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body class="bg-a2">
+    <div id="app">
+        @@include('@@webRoot/_include/A2/header.html',{
+          "header" : "main"
+        })
+        @@include('@@webRoot/_include/A2/toolbar.html',{
+          "toolbar" : "tour",
+          "active-1" : "",
+          "active-2" : "",
+          "active-3" : "active",
+        })
+        <main id="container" class="main-a2 main-tour">
+          <div class="main-visual">
+            <a href="../golf/detail.html" class="item">
+              <div class="banner"><img src="@@webRoot/images/a2/main-banner-tour.png" alt="" /></div>
+              <div class="text-box">
+                <div class="title en">St.Andrew’s <br />Old Course</div>
+                <div class="summary">
+                  인생의 단 한번의 기회가 될 골프의 성지 원형을<br />
+                  그대로 간직한 세계 최고의 골프코스
+                </div>
+              </div>
+            </a>
+            <div class="indicator-liner">
+              <span class="active"></span>
+              <span class=""></span>
+              <span class=""></span>
+              <span class=""></span>
+            </div>
+          </div>
+          <div class="space space0"><img src="@@webRoot/images/a2/main-tour-01.png" alt="추천여행" /></div>
+          <div class="special-wrap">
+            <div class="title-box">
+              <div class="title">이달의 특별한 여행</div>
+              <a href="#" class="more">더보기</a>
+            </div>
+            <div class="tab"><img src="@@webRoot/images/a1/main-tour-02-tab.png" alt="" /></div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-02-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-02-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-02-list3.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="swiper-pagination style-white2"></div>
+          </div>
+          <div class="event-wrap">
+            <div class="title-box">
+              <div class="title">이벤트</div>
+              <a href="#" class="more">더보기</a>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-03-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-03-list2.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="swiper-pagination style-dot a2"></div>
+          </div>
+          <div class="ticket-wrap">
+            <div class="title-box">
+              <div class="title">입장권 · 액티비티</div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-04-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-04-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-04-list3.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/main-tour-04-list4.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="swiper-pagination style-gray2"></div>
+          </div>
+          <div class="space space1"><img src="@@webRoot/images/a2/main-tour-05.png" alt="공항픽업" /></div>
+        </main>
+
+        @@include('@@webRoot/_include/A2/footer.html',{
+          "footer" : "tour"
+        })
+    </div>
+    
+    <script>
+      const swiperTourSpecial = new Swiper('.special-wrap .swiper', {
+        slidesPerView: 1.45,
+        spaceBetween: 16,
+        pagination: {
+          el: ".special-wrap .swiper-pagination",
+          type: "progressbar",
+        },
+      })
+      const swiperTourEvent = new Swiper('.event-wrap .swiper', {
+        slidesPerView: 1.01,
+        spaceBetween: 16,
+        pagination: {
+          el: ".event-wrap .swiper-pagination",
+        },
+      })
+      const swiperTourTicket = new Swiper('.ticket-wrap .swiper', {
+        slidesPerView: 2.25,
+        spaceBetween: 16,
+        pagination: {
+          el: ".ticket-wrap .swiper-pagination",
+          type: "progressbar",
+        },
+      })
+    </script>
+</body>
+</html>

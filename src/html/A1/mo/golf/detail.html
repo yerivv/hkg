@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "A-1 골프장 상세"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/A1/header.html',{
+          "header" : "sub"
+        })
+        @@include('@@webRoot/_include/A1/toolbar.html',{
+          "toolbar" : "membership"
+        })
+        <!-- @@include('@@webRoot/_include/aside.html') -->
+        <main id="container" class="golf-a1">
+          <div><img src="@@webRoot/images/a1/detail-01.png" alt="" /></div>
+          <div class="intro">
+            <div class="tab"><img src="@@webRoot/images/a1/detail-02-tab.png" alt="" /></div>
+            <div><img src="@@webRoot/images/a1/detail-02-01.png" alt="" /></div>
+          </div>
+          <div class="banner-wrap">
+            <div class="text-box">
+              <div class="title">자연과 함께하는 <br /><strong>골프 코스</strong></div>
+              <div class="summary">
+                모든 홀에서 나트랑 해변의 아름다운 전망을 <br />바라볼 수 있음은 물론, 바다에서 불어오는 <br />시원한 바람을 맞으며 상쾌한 라운드 코스
+              </div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-list3.png" alt="" /></div>
+              </div>
+            </div>
+            <div class="swiper-pagination style-white"></div>
+          </div>
+          <div class="poetry">
+            <div class="title-box">
+              <div class="title">시설</div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-01-list1.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-01-list2.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-01-list3.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-01-list4.png" alt="" /></div>
+                <div class="swiper-slide"><img src="@@webRoot/images/a1/detail-03-01-list5.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="course">
+            <div class="title-box">
+              <div class="title">코스 정보</div>
+            </div>
+            <div class="list">
+              <div><img src="@@webRoot/images/a1/detail-03-02-list1.png" alt="" /></div>
+              <div><img src="@@webRoot/images/a1/detail-03-02-list2.png" alt="" /></div>
+              <div><img src="@@webRoot/images/a1/detail-03-02-list3.png" alt="" /></div>
+            </div>
+          </div>
+          <div class="course-info">
+            <div class="title-box">
+              <div class="title">코스별 안내</div>
+            </div>
+            <div class="space"><img src="@@webRoot/images/a1/detail-03-03.png" alt="" /></div>
+          </div>
+          <div class="space"><img src="@@webRoot/images/a1/detail-04.png" alt="" /></div>
+          <div class="space cs"><img src="@@webRoot/images/a1/cs.png" alt="" /></div>
+        </main>
+        
+        @@include('@@webRoot/_include/A1/footer.html',{
+          "footer" : "membership"
+        })
+
+        <!-- @@include('@@webRoot/_include/foot.html') -->
+
+        <!-- @@include('@@webRoot/_include/modal.html') -->
+    </div>
+    
+    <script>
+      const swiperTourSpecial = new Swiper('.banner-wrap .swiper', {
+        slidesPerView: 1.55,
+        spaceBetween: 16,
+        pagination: {
+          el: ".banner-wrap .swiper-pagination",
+          type: "progressbar",
+        },
+      })
+      const swiperDetailPoetry = new Swiper('.poetry .swiper', {
+        slidesPerView: 2.2,
+        spaceBetween: 16,
+      })
+    </script>
+</body>
+</html>
