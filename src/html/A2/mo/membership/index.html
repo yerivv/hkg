@@ -9,7 +9,45 @@
     <script src="@@webRoot/js/develop.js"></script>
 </head>
 <body class="bg-a2">
-    <div id="app" style="overflow: initial;">
+    <div id="app-splash">
+        <main id="container" class="main-a2-splash">
+          <div class="swiper">
+            <div class="title"><img src="@@webRoot/images/a2/splash-t.png" alt="" /></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-1.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>특별한 경험으로의 초대</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-2.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>삶을 가치있게 하는 여정</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="banner"><img src="@@webRoot/images/a2/splash-3.png" alt="" /></div>
+                <div class="text-box">
+                  <div class="text">
+                    <span>최고의 서비스로 최상의 경험을</span>
+                    <img src="@@webRoot/images/union.png" alt="Han K Golf CI" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide"></div>
+            </div>
+            <div class="swiper-pagination style-dot splash2"></div>
+          </div>
+        </main>
+    </div>
+    <div id="app" class="reset-app" style="overflow: initial;">
         @@include('@@webRoot/_include/A2/header.html',{
           "header" : "main"
         })
@@ -117,9 +155,36 @@
     </div>
     
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const element = document.getElementById("app");
-        element.classList.add("fade-in");
+      const swiperSplashA2 = new Swiper('.main-a2-splash .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        effect: "fade",
+        loop: false,
+        pagination: {
+          el: ".main-a2-splash .swiper-pagination",
+          renderBullet: function (index, className) {
+            if (index < 3) {
+              return '<span class="' + className + '"></span>';
+            } else {
+              return '';
+            }
+          },
+        },
+        on: {
+          slideChange : function() {
+            const swiper = this;
+            if (swiper && swiper.realIndex !== undefined) {
+              const activeIndex = swiper.realIndex;
+              if (activeIndex === (swiper.slides.length - 1)) {
+                const element = document.getElementById("app");
+                const element2 = document.getElementById("app-splash");
+                element.classList.remove("reset-app");
+                element2.classList.add('hide')
+                element.classList.add("fade-in");
+              }
+            }
+          },
+        }
       });
       
       const scrollCont = () => {

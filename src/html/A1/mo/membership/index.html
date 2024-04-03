@@ -9,7 +9,14 @@
     <script src="@@webRoot/js/develop.js"></script>
 </head>
 <body>
-    <div id="app">
+    <div id="app-splash">
+      <main id="container" class="main-a1-splash">
+        <video muted autoplay playsinline preload="auto">
+          <source src="@@webRoot/media/hanksplash_1.mp4" type="video/mp4" />
+        </video> 
+      </main>
+    </div>
+    <div id="app" class="reset-app">
         @@include('@@webRoot/_include/A1/header.html',{
           "header" : "main"
         })
@@ -80,40 +87,52 @@
     
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        const element = document.getElementById("app");
-        element.classList.add("fade-in");
+        setTimeout(function() {
+          const element = document.getElementById("app");
+          const element2 = document.getElementById("app-splash");
+          element.classList.remove("reset-app");
+          element2.classList.add('hide')
+          element.classList.add("fade-in");
+        }, 5000); // 5초 후에 실행
       });
 
       let swiperMembershipMain; // swiperMembershipMain을 전역 스코프에 미리 선언합니다.
       document.addEventListener("DOMContentLoaded", function() {
-        // DOM이 로드되면 swiperMembershipMain 객체를 초기화합니다.
-        swiperMembershipMain = new Swiper('.main-visual', {
-          slidesPerView: 1,
-          spaceBetween: 0,
-          effect: "fade",
-          loop: true,
-          autoplay: {
-            delay: 7500,
-            disableOnInteraction: false
-          },
-          pagination: {
-            el: ".main-visual .swiper-pagination",
-            type: "progressbar",
-          },
-          on: {
-            slideChange : function() {
-              const swiper = this; // 현재 Swiper 객체를 가져옵니다.
-              const boxes = document.querySelectorAll('.main-visual .swiper-slide');
-              boxes.forEach(function(box) {
-                box.classList.remove('ani-slide');
-              });
-              if (swiper && swiper.realIndex !== undefined) {
-                const activeIndex = swiper.realIndex;
-                boxes[activeIndex].classList.add('ani-slide');
-              }
+        setTimeout(function() {
+          // DOM이 로드되면 swiperMembershipMain 객체를 초기화합니다.
+          swiperMembershipMain = new Swiper('.main-visual', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+              delay: 7500,
+              disableOnInteraction: false
             },
-          }
-        });
+            pagination: {
+              el: ".main-visual .swiper-pagination",
+              type: "progressbar",
+            },
+            on: {
+              init: function() {
+                const swiper = this; // 현재 Swiper 객체를 가져옵니다.
+                const activeSlide = swiper.slides[swiper.activeIndex]; // 현재 활성화된 슬라이드를 가져옵니다.
+                activeSlide.classList.add('ani-slide'); // 활성화된 슬라이드에 ani-slide 클래스를 추가합니다.
+              },
+              slideChange : function() {
+                const swiper = this; // 현재 Swiper 객체를 가져옵니다.
+                const boxes = document.querySelectorAll('.main-visual .swiper-slide');
+                boxes.forEach(function(box) {
+                  box.classList.remove('ani-slide');
+                });
+                if (swiper && swiper.realIndex !== undefined) {
+                  const activeIndex = swiper.realIndex;
+                  boxes[activeIndex].classList.add('ani-slide');
+                }
+              },
+            }
+          });
+        }, 5000);
       });
 
       const swiperMembership = new Swiper('.membership-wrap .swiper', {

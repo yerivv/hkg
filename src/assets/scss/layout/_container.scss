@@ -138,3 +138,12 @@ body{@include mo-min-width;@include text;}
     }
   }
 }
+#app {
+  &.reset-app {position:fixed;left:0;top:0;width: 100%;height: 100dvh;overflow: hidden;opacity: 0;}
+}
+
+#app-splash {
+  &.hide {
+    display: none;
+  }
+}
