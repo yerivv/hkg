@@ -157,13 +157,33 @@
         }
       }
     }
+    // .swiper-slide {
+    //   .banner img {
+    //     animation: none;
+    //   }
+    //   &.ani-slide {
+    //     .banner img {
+    //       animation: slidein 8s forwards;
+    //     }
+    //   }
+    // }
     .swiper-slide {
-      .banner img {
-        animation: none;
-      }
-      &.ani-slide {
+      .item {
         .banner img {
-          animation: slidein 8s forwards;
+          animation: none;
+          opacity: 0;
+          transform: translateX(0);
+          transition: transform 8000ms ease, opacity 1450ms;
+        }
+      }
+      &.swiper-slide-active {
+        .item {
+          .banner img {
+            animation: none;
+            opacity: 1;
+            transform: translateX(-80px);
+            transition: transform 8000ms ease, opacity 1450ms;
+          }
         }
       }
     }

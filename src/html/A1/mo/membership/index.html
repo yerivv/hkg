@@ -117,17 +117,17 @@
               init: function() {
                 const swiper = this; // 현재 Swiper 객체를 가져옵니다.
                 const activeSlide = swiper.slides[swiper.activeIndex]; // 현재 활성화된 슬라이드를 가져옵니다.
-                activeSlide.classList.add('ani-slide'); // 활성화된 슬라이드에 ani-slide 클래스를 추가합니다.
+                //activeSlide.classList.add('ani-slide'); // 활성화된 슬라이드에 ani-slide 클래스를 추가합니다.
               },
               slideChange : function() {
                 const swiper = this; // 현재 Swiper 객체를 가져옵니다.
                 const boxes = document.querySelectorAll('.main-visual .swiper-slide');
                 boxes.forEach(function(box) {
-                  box.classList.remove('ani-slide');
+                  //box.classList.remove('ani-slide');
                 });
                 if (swiper && swiper.realIndex !== undefined) {
                   const activeIndex = swiper.realIndex;
-                  boxes[activeIndex].classList.add('ani-slide');
+                  //boxes[activeIndex].classList.add('ani-slide');
                 }
               },
             }
